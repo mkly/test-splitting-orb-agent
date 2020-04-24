@@ -178,7 +178,7 @@
 
     (def artifacts
       (filter (fn [artifact]
-        (re-find #"xml" (get artifact :path)))
+        (re-find #"test-splitting-orb\/.*\.xml" (get artifact :path)))
         (mapcat (fn [job] (get-job-artifacts (get job :job_number))) jobs)))
 
     (def test-xml-data
